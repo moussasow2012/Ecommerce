@@ -1,0 +1,52 @@
+/* 
+    Document   : pied
+    Created on : 2013-04-22, 13:09:12
+    Author     : LeBaron2012
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+
+#pied{
+	background-color: white;
+	width: 1098px;
+	height: 125px;
+	margin-top:150px;
+	border-radius: 20px;
+	text-align: center;
+	left:2%;
+	right:auto;
+	margin:auto;
+	top: 10px;
+	position: relative;
+	
+}
+
+#pied p:hover{
+	color: orange;
+}
+
+.colonnePied {
+	
+   
+    font-size: 12px;  
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-right-width: 1px;
+    border-right-style: none ;
+    border-right-color: #F1F1F1;
+    font-weight:bold;
+         
+ 
+}
+
+.colonnePied a {
+	 color: black;
+	 
+}
+
+.colonnePied a:hover {
+	 color: orange;	 
+}

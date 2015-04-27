@@ -1,0 +1,13 @@
+#haut{
+	
+	background-color: white;
+	width: 1098px;
+	height: 150px;
+	position:relative;
+	margin-bottom: 20px;
+}
+
+body {
+background-color: #EFF0FF;
+font-family: 'Roboto Condensed';
+}

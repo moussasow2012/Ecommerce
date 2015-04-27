@@ -1,0 +1,89 @@
+/* 
+    Document   : headerConnecte
+    Created on : 19 avr. 2013, 15:14:45
+    Author     : lebaron2012
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#haut{
+	
+	background-color: white;
+	width: 1098px;
+	height: 150px;
+	position:relative;
+
+	margin-bottom: 20px;
+}
+
+
+#logo{
+	float: left;
+	border-radius: 20px;
+}
+
+#conexion{
+position: relative;
+float: right;
+	
+}
+
+ul#conexion{
+	
+	color:transparent;
+	width: 700px;
+}
+
+
+ul#conexion li {
+	
+	font-size:14px;
+	font-family: 'Roboto Condensed';
+	margin:0;
+	padding:0;
+	float:left;
+	position:relative;
+	border-right:1px none black;
+	border-left:1px solid black;
+	display:inline-block;		
+		
+}
+
+ul#conexion li a:hover {
+	background:#FF8830;
+	color:#282828;
+	border-radius: 10px;
+
+}
+
+ul#conexion li a {
+	padding:5px 30px;
+	color:#616161;
+	border-radius: 10px;
+	text-decoration:none;
+	border-right:1px thin black;
+	border-left:1px thin black;
+
+	background: transparent;
+	-webkit-transition:color 0.2s linear, background 0.2s linear;	
+	-moz-transition:color 0.2s linear, background 0.2s linear;	
+	-o-transition:color 0.2s linear, background 0.2s linear;	
+	transition:color 0.2s linear, background 0.2s linear;	
+}
+
+#Bienvenu{
+    float: left;
+    color: blue;
+}
+
+#vendre{
+	float:right;
+	text-align:center;
+	width: 300px;	
+		margin-right: 30px;
+	margin-top:30px;
+	border-radius: 10px;
+	background-color: #FFFFFF;
+	padding-bottom: 5px;
+}
+

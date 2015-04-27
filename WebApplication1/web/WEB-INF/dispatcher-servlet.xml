@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+                <prop key="formulaire.htm">FormulaireController</prop>
+                <prop key="achatArticle.htm">achatArticleController</prop>
+                 <prop key="fomulaireArticle.htm">fomulaireArticleController</prop>
+                <prop key="article.htm">ArticleController</prop>               
+                <prop key="panier.htm">PanierController</prop>
+                <prop key="connexion.htm">connexion</prop>
+                <prop key="Categorie.htm">CategorieController</prop>
+                <prop key="imageArticle.htm">imageArticleController</prop>
+                <prop key="paiement.htm">paiementController</prop>
+                
+            </props>
+        </property>
+    </bean>
+    
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+    
+          <bean id="paiementController" class="controller.paiementController"> </bean>
+       <bean id="PanierController" class="controller.PanierController"> </bean>
+        <bean id="ArticleController" class="controller.ArticleController"> </bean>
+      <bean id="achatArticleController" class="controller.AchatArticleController"> </bean> 
+                 <bean id="CategorieController" class="controller.CategorieController"> </bean> 
+                  <bean id="validation" class="controller.Validation"> </bean> 
+ 
+ <bean id="fomulaireArticleController"
+      class="controller.FomulaireArticleController">
+     
+    <property name="sessionForm">
+        <value>false</value>
+    </property>
+    <property name="commandClass">
+        <value>eCommerce.Article</value>
+    </property>
+    <property name="commandName">
+        <value>fomulaireArticle</value>
+    </property>
+    <property name="formView">
+        <value>fomulaireArticle</value>
+    </property>
+    <property name="successView">
+        <value>achatArticle</value>
+    </property>
+</bean>
+ 
+  <bean id="imageArticleController" class="controller.imageArticleController"> 
+     
+  
+  </bean>
+ <bean id="connexion"
+      class="controller.ConnexionController">
+
+    <property name="sessionForm">
+        <value>true</value>
+    </property>
+    <property name="commandClass">
+        <value>eCommerce.Personne</value>
+    </property>
+    <property name="commandName">
+        <value>connexion</value>
+    </property>
+    <property name="formView">
+        <value>connexion</value>
+    </property>
+    <property name="successView">
+        <value>index_1</value>
+    </property>
+</bean>
+ 
+<bean id="FormulaireController"
+      class="controller.FormController">
+
+    <property name="sessionForm">
+        <value>false</value>
+    </property>
+    <property name="commandClass">
+        <value>eCommerce.Personne</value>
+    </property>
+    <property name="commandName">
+        <value>formulairePersonne</value>
+    </property>
+    <property name="formView">
+        <value>formulaire</value>
+    </property>
+    <property name="successView">
+        <value>validation</value>
+    </property>
+</bean>
+
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+
+    
+
+</beans>
